@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>love for mark</title>
+
+<link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Glacial Indifference', sans-serif;
+    background: #fffafa; 
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #ff85a2;
+}
+
+h2 {
+    font-weight: normal;
+    color: #ffc0cb;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    background: #ff85a2;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: 'Glacial Indifference', sans-serif;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff6b8e;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #ffc0cb;
+    font-family: 'Glacial Indifference', sans-serif;
+    color: #4a4a4a;
+    background-color: white;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff85a2;
+}
+
+.hidden {
+    display: none;
+}
+
+.section {
+    margin-top: 50px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+li {
+    margin-bottom: 12px;
+    color: #ff85a2; 
+}
+
+li span {
+    color: #4a4a4a;
+}
+
+#error {
+    font-size: 14px;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="warning">
+<h1>love for mark</h1>
+<h2>dedicado ao amor de todas as minhas vidas, Mark vexleyr.</h2>
+
+<p style="margin-top:40px; font-size:18px;">
+se você não for o mark, recomendo que não avance uma página sequer.
+<br><br>
+esse espaço foi criado exclusivamente para ele,
+para que possa acessar, reler e sentir tudo
+quantas vezes quiser.
+</p>
+
+<button onclick="showPassword()">continuar</button>
+</div>
+
+<div class="container hidden" id="passwordPage">
+<h1>love for mark</h1>
+<p>área exclusiva</p>
+
+<input type="password" id="password" placeholder="digite a senha">
+<br><br>
+<button onclick="checkPassword()">entrar</button>
+
+<p id="error" style="color:red;"></p>
+</div>
+
+<div class="container hidden" id="site">
+<h1>love for mark</h1>
+<h2>dedicado ao amor de todas as minhas vidas, Mark vexleyr.</h2>
+
+<audio id="music" loop>
+<source src="heaven.mp3" type="audio/mpeg">
+</audio>
+
+<div class="section">
+<p>
+era você e tem sido você.
+</p>
+
+<p>
+entre tantas pessoas, entre tantos caminhos,
+meu coração sempre soube exatamente onde ficar.
+</p>
+
+<p>
+todas as versões minhas encontram paz quando estão com você.
+</p>
+
+<p>
+isso é o nosso
+<br>
+<b>mark e sophie core.</b>
+</p>
+</div>
+
+<div class="section">
+<h2>motivos pelos quais eu amo você</h2>
+<ul>
+<li><span>porque sua alma é uma das mais gentis que eu já conheci</span></li>
+<li><span>porque você me faz sentir em casa</span></li>
+<li><span>porque tudo em você me encanta</span></li>
+<li><span>porque você cuida de mim de um jeito único</span></li>
+<li><span>porque sua presença muda completamente o meu dia</span></li>
+<li><span>porque você é a pessoa que eu escolho todos os dias</span></li>
+<li><span>porque você é o amor da minha vida</span></li>
+<li><span>porque com você tudo faz sentido</span></li>
+<li><span>porque o meu coração sempre volta para você</span></li>
+<li><span>porque amar você é a coisa mais natural que existe em mim</span></li>
+</ul>
+</div>
+
+</div>
+
+<script>
+function showPassword() {
+    document.getElementById("warning").classList.add("hidden");
+    document.getElementById("passwordPage").classList.remove("hidden");
+}
+
+function checkPassword() {
+    var password = document.getElementById("password").value;
+
+    // SENHA ATUALIZADA PARA 1218
+    if (password === "1218") {
+        document.getElementById("passwordPage").classList.add("hidden");
+        document.getElementById("site").classList.remove("hidden");
+        document.getElementById("music").play();
+    } else {
+        document.getElementById("error").innerText = "senha incorreta";
+    }
+}
+
+// Permite que ele aperte "Enter" no teclado para entrar
+document.getElementById("password").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        checkPassword();
+    }
+});
+</script>
+
+</body>
+</html>
